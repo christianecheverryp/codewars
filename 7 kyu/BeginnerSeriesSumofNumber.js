@@ -20,8 +20,20 @@ Examples (a, b) --> output (explanation)
 //! Solution
 function getSum( a,b )
 {
-   if(a === b){
-     return a
-   }
-  return a + b
+  if (a === b) return a
+
+  if (a > b) {
+    const temp = b
+    b = a
+    a = temp
+  }
+
+  let result = a
+
+  while (a < b) {
+    a++
+    result += a
+  }
+  return result
+
 }
